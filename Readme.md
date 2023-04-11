@@ -72,18 +72,18 @@ Salida:
 ```python
 Algoritmo CalculoDNI
 	# Entrada
-		DNI <- leer()
-		tablaLetrasDNI <- "TRWAGMYFPDXBNJZSQVHLCKE"
-		resultado <- ""
+	DNI <- leer()
+	tablaLetrasDNI <- "TRWAGMYFPDXBNJZSQVHLCKE"
+	resultado <- ""
 	# Proceso
-		Si DNI es válido Entonces 
-			resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
-			resultado <- tablaLetrasDNI[resultadoResto]
-		Sino
-			resultado <- "DNI inválido"
-		Fin Si
+	Si DNI es válido Entonces 
+		resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
+		resultado <- tablaLetrasDNI[resultadoResto]
+	Sino
+		resultado <- "DNI inválido"
+	Fin Si
 	# Salida
-		Escribir(resultado)
+	Escribir(resultado)
 Fin Algoritmo
 ```
 
@@ -125,17 +125,17 @@ Salida:
 Algoritmo CalculoSalario
 	# Entrada
 	salarioBase <- leer()
-		pagasExtras <- leer()
-		complementos <- leer()
-		otrosConceptosRetributivos <- leer()
-		IRPF <- leer()
-		seguridadSocial <- leer()
+	pagasExtras <- leer()
+	complementos <- leer()
+	otrosConceptosRetributivos <- leer()
+	IRPF <- leer()
+	seguridadSocial <- leer()
 	# Proceso
-		salarioBruto <- salarioBase + pagasExtras + complementos+ otrosConceptosRetributivos
-		deducciones <- IRPF + seguridadSocial
-		salarioNeto <- salarioBruto - deducciones
+	salarioBruto <- salarioBase + pagasExtras + complementos+ otrosConceptosRetributivos
+	deducciones <- IRPF + seguridadSocial
+	salarioNeto <- salarioBruto - deducciones
 	# Salida
-		Escribir(salarioNeto)
+	Escribir(salarioNeto)
 Fin Algoritmo
 ```
 
@@ -167,25 +167,25 @@ Salida:
 ```python
 Algoritmo RutaAvionCiudades
 	# Entrada:
-		rutas <- leer{}
-		#ejemplo con kilometros de distancia: 
-		# rutas <- {
-		# 	"Madrid": {"Barcelona": 600, "Valencia": 400, "Sevilla": 500, "Bilbao": 300},
-   		# 	"Barcelona": {"Madrid": 600, "Valencia": 350, "Sevilla": 800, "Bilbao": 750},
-   		# 	"Valencia": {"Madrid": 400, "Barcelona": 350, "Sevilla": 700, "Bilbao": 650},
-   		# 	"Sevilla": {"Madrid": 500, "Barcelona": 800, "Valencia": 700, "Bilbao": 850},
-   		# 	"Bilbao": {"Madrid": 300, "Barcelona": 750, "Valencia": 650, "Sevilla": 850}
-		# }
-		origen <- leer() 
-		destino <- leer()
+	rutas <- leer{}
+	#Ejemplo real: 
+	# rutas <- {
+	# 	"Madrid": {"Barcelona": 600, "Valencia": 400, "Sevilla": 500, "Bilbao": 300},
+   	# 	"Barcelona": {"Madrid": 600, "Valencia": 350, "Sevilla": 800, "Bilbao": 750},
+   	# 	"Valencia": {"Madrid": 400, "Barcelona": 350, "Sevilla": 700, "Bilbao": 650},
+   	# 	"Sevilla": {"Madrid": 500, "Barcelona": 800, "Valencia": 700, "Bilbao": 850},
+   	# 	"Bilbao": {"Madrid": 300, "Barcelona": 750, "Valencia": 650, "Sevilla": 850}
+	# }
+	origen <- leer() 
+	destino <- leer()
 	# Proceso:
-		Si origen y destino están en rutas Entonces
-			distancia <- rutas[origen][destino]
-			rutaUsuario <- "Ruta de vuelo: ", origen, "->", destino, " (", distancia, " km)"
-		Sino
-			rutaUsuario <- "Ciudad de origen o destino no válidas."
+	Si origen y destino están en rutas Entonces
+		distancia <- rutas[origen][destino]
+		rutaUsuario <- "Ruta de vuelo: ", origen, "->", destino, " (", distancia, " km)"
+	Sino
+		rutaUsuario <- "Ciudad de origen o destino no válidas."
 	# Salida: 
-		Escribir(rutaUsuario)
+	Escribir(rutaUsuario)
 Fin Algoritmo
 ```
 
