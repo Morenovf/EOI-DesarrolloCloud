@@ -5,7 +5,7 @@ Proceso para acometer la resolución de los ejercicios de algoritmos:
 
 **Paso 1**: Definir el problema.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Paso 3**: Escribir el pseudocódigo.
 
@@ -49,7 +49,7 @@ El número del DNI debe tener **8 dígitos**. Para calcular la letra del Documen
     | 21 | K |
     | 22 | E |
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 Entrada:
 
@@ -71,18 +71,19 @@ Salida:
 
 ```python
 Algoritmo CalculoDNI
-	# Entrada
+
+# Entrada:
 	DNI <- leer()
 	tablaLetrasDNI <- "TRWAGMYFPDXBNJZSQVHLCKE"
 	resultado <- ""
-	# Proceso
+# Proceso:
 	Si DNI es válido Entonces 
 		resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
 		resultado <- tablaLetrasDNI[resultadoResto]
 	Sino
 		resultado <- "DNI inválido"
 	Fin Si
-	# Salida
+# Salida:
 	Escribir(resultado)
 Fin Algoritmo
 ```
@@ -97,7 +98,7 @@ A partir del salario bruto se deducen las cotizaciones a la Seguridad Social y e
 
 El salario neto anual se obtiene restando al salario bruto anual las cotizaciones y el IRPF correspondiente. El resultado final es el salario que percibe el trabajador después de impuestos y cotizaciones.
 
-**Paso 2:** Ingresar la entrada, el proceso y la salida.
+**Paso 2:** Ingresar la Entrada, el proceso y la salida.
 
 Entrada: 
 
@@ -123,18 +124,19 @@ Salida:
 
 ```python
 Algoritmo CalculoSalario
-	# Entrada
+
+# Entrada:
 	salarioBase <- leer()
 	pagasExtras <- leer()
 	complementos <- leer()
 	otrosConceptosRetributivos <- leer()
 	IRPF <- leer()
 	seguridadSocial <- leer()
-	# Proceso
+# Proceso:
 	salarioBruto <- salarioBase + pagasExtras + complementos+ otrosConceptosRetributivos
 	deducciones <- IRPF + seguridadSocial
-	salarioNeto <- salarioBruto - deducciones
-	# Salida
+salarioNeto <- salarioBruto - deducciones
+	# Salida:
 	Escribir(salarioNeto)
 Fin Algoritmo
 ```
@@ -145,7 +147,7 @@ Fin Algoritmo
 
 Necesitamos partir de una lista de ciudades definidas por el usuario y conocer la distancia en kilometros entre elleas para determinar la ruta. Dependiendo de los datos que se proporcionen se podrá determinar una ruta u otra dependiendo del origen y el destino especificado.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 Entrada:
 
@@ -166,7 +168,8 @@ Salida:
 
 ```python
 Algoritmo RutaAvionCiudades
-	# Entrada:
+
+# Entrada:
 	rutas <- leer{}
 	#Ejemplo real: 
 	# rutas <- {
@@ -178,13 +181,13 @@ Algoritmo RutaAvionCiudades
 	# }
 	origen <- leer() 
 	destino <- leer()
-	# Proceso:
+# Proceso:
 	Si origen y destino están en rutas Entonces
 		distancia <- rutas[origen][destino]
 		rutaUsuario <- "Ruta de vuelo: ", origen, "->", destino, " (", distancia, " km)"
 	Sino
 		rutaUsuario <- "Ciudad de origen o destino no válidas."
-	# Salida: 
+# Salida: 
 	Escribir(rutaUsuario)
 Fin Algoritmo
 ```
@@ -198,9 +201,9 @@ Para resolver el problema de calcular el área y perímetro de un círculo dado 
 - El perímetro o circunferencia del círculo se calcula como: P = 2 * pi * r, donde "pi" es una constante que representa la relación entre la circunferencia y el diámetro de cualquier círculo (aproximadamente igual a 3.14159), y "r" es el radio del círculo.
 - El área del círculo se calcula como: A = pi * r^2, donde "r" es el radio del círculo.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada**
+Entrada:
 
 Solicitar al usuario:
 
@@ -208,30 +211,31 @@ Solicitar al usuario:
 
 Definir constante PI con valor “3.14159265” y asignarla a la variable `constantePi`
 
-**Proceso**
+Proceso:
 
 - Calcular el perímetro del círculo como 2 * PI * radio y asignarlo a `perímetroCírculo`
 - Calcular el área del círculo como PI * radio * radio `áreaCírculo`
 
-**Salida**
+Salida:
 
 - Mostrar el valor del perímetro del círculo
 - Mostrar el valor del área del círculo
 
 **Paso 3**: Escribir el pseudocódigo.
 
-```markdown
-Algoritmo cálculoÁreayPerímetroCírculo
+```python
+Algoritmo ÁreayPerímetroCírculo
 
-# ENTRADA:
+# Entrada:
 	radioCírculo <- leer()
 	constantePi <- "3.14159265"
-# PROCESO:
+# Proceso:
 	perímetroCírculo <- 2*constantePi*radioCírculo
 	áreaCírculo <- constantePi*radioCírculo*radioCírculo
-# SALIDA:
-	Escribir perímetroCírculo
-	Escribir áreaCírculo
+# Salida:
+	Escribir(perímetroCírculo)
+	Escribir(áreaCírculo)
+Fin Algoritmo
 ```
 
 ## 5. **Dada una lista de números enteros, determina cuál es el mayor y cuál es el menor.**
@@ -241,11 +245,10 @@ Algoritmo cálculoÁreayPerímetroCírculo
 El problema consiste en encontrar el número más grande y el número más pequeño de una lista de números enteros. La solución debe ser un algoritmo que recorra la lista de números y compare cada uno de ellos con las variables "mayor" y "menor" para determinar cuál es el número más grande y cuál es el número más pequeño.
 
 > La lista deberá obligar al usuario a insertar números enteros, si no no podrá continuar con el algoritmo.
-> 
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada**
+Entrada:
 
 Solicitar al usuario:
 
@@ -270,24 +273,25 @@ b. Si "n" es menor que "menor", actualizar "menor" con el valor de "n".
 
 **Paso 3**: Escribir el pseudocódigo.
 
-```markdown
-Algoritmo encontrarNumeroMayoryMenor
+```python
+Algoritmo NumeroMayoryMenor
 
-# ENTRADA:
+# Entrada:
 	listaNumeros <- leer[]
-	numMayor = lista[0]
-	numMenor = lista[0]
-# PROCESO:
-	Si n = Numero Entero 
-		Para n en lista :
+	numMayor <- lista[0]
+	numMenor <- lista[0]
+# Proceso:
+	Si n <- Numero Entero 
+		Para n en lista 
 			Si n > numMayor Entonces
-				numMayor = n
+				numMayor <- n
 			Si n < numMenor Entonces
-				numMenor = n
-	Si no 
-		Escribir "Por favor, escribe  una lista donde únicamente haya numeros enteros."
-# SALIDA:
+				numMenor <- n
+	Sino 
+		Escribir("Por favor, escribe  una lista donde únicamente haya numeros enteros.")
+# Salida:
 	Escribir numMayor, numMenor
+Fin Algoritmo
 ```
 
 ## 6. **Crea un algoritmo que convierta grados Celsius a Fahrenheit.**
@@ -296,34 +300,35 @@ Algoritmo encontrarNumeroMayoryMenor
 
 Nos piden desarrollar un algoritmo que permita convertir una temperatura en grados Celsius a su equivalente en grados Fahrenheit.  Se resuelve utilizando una fórmula de conversión `ºF=(ºC*1.8) + 32`.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada**
+Entrada:
 
 - Leer la temperatura en grados Celsius (ºC) `temperaturaCelsius`
 
-**Proceso**
+Proceso:
 
 - Convertir la temperatura de Celsius a Fahrenheit usando la fórmula adecuada.
 
-**Salida**
+Salida:
 
 - Mostrar el resultado de la conversión en grados Fahrenheit (ºF) `gradosFahrenheit`
 
 **Paso 3**: Escribir el pseudocódigo.
 
-```markdown
-Algoritmo convertirGradosCelsius-Fahrenheit
+```python
+Algoritmo GradosCelsiusAFahrenheit
 
-# ENTRADA:
+# Entrada:
 	temperaturaCelsius <- leer()
-# PROCESO:
-	Si temperaturaCelsius = Numero Entero 
-		gradosFahrenheit = (temperaturaCelsius*1.8) + 32
+# Proceso:
+	Si temperaturaCelsius <- Numero Entero 
+		gradosFahrenheit <- (temperaturaCelsius*1.8) + 32
 	Si no 
 		Escribir "Por favor, escribe un valor numérico."
-# SALIDA:
-	Escribir gradosFahrenheit
+# Salida:
+	Escribir(gradosFahrenheit)
+Fin Algoritmo
 ```
 
 ## 7. **Dado un número entero, crea un algoritmo que determine si es par o impar.**
@@ -332,37 +337,38 @@ Algoritmo convertirGradosCelsius-Fahrenheit
 
 Para determinar si un número es par o impar debemos calcular su módulo 2 (el resto de la división del número entre 2). Si el resto es igual a cero, el número es par. Si no, es impar.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada**
+Entrada:
 
 - Leer`numeroEntero`
 
-**Proceso**
+Proceso:
 
 - Calcular módulo de 2 de `numeroEntero`
 - Determinar si es impar o par.
 
-**Salida**
+Salida:
 
 - Escribir si el número es par o impar.
 - Si el número no es un valor numérico aceptado, mostrar mensaje de error.
 
 **Paso 3**: Escribir el pseudocódigo.
 
-```markdown
+```python
 Algoritmo ImparoPar
 
-# ENTRADA:
-	numeroEntero<- leer()
+# Entrada:
+	numeroEntero <- leer()
 	paroImpar <- ""
-# PROCESO:
-	Si numeroEntero % (MOD) 2 = 0 Entonces
+# Proceso:
+	Si numeroEntero % (MOD) 2 <- 0 Entonces
 		paroImpar <- "El numero es par"
 	Sino
 		paroImpar <- "El numero es impar"
-# SALIDA:
-	Escribir paroImpar
+# Salida:
+	Escribir(paroImpar)
+Fin Algoritmo
 ```
 
 ## 8. **Crea un algoritmo que determine si un año es bisiesto o no.**
@@ -378,21 +384,21 @@ Condiciones para determinar cuando un año es bisiesto:
     
     Si lo es, el año es bisiesto si:
     
-    - **Es divisible** entre 400. Si no lo es, ****************************no es bisiesto****************************.
+    - **Es divisible** entre 400. Si no lo es, **no es bisiesto**.
 
 Ejemplo: 
 
-1. El año 2000 es divisible entre 4 y da resto 0, pero también da resto cero si lo dividimos entre 100, con lo cual ****************************no es bisiesto****************************.
-2. Por el contrario, el año 2012 es divisible entre 4 y da resto 0 pero **************no da resto cero************** cuando lo dividimos entre 100 lo cual ****************************es bisiesto****************************.
+1. El año 2000 es divisible entre 4 y da resto 0, pero también da resto cero si lo dividimos entre 100, con lo cual **no es bisiesto**.
+2. Por el contrario, el año 2012 es divisible entre 4 y da resto 0 pero **no da resto cero**cuando lo dividimos entre 100 lo cual **es bisiesto**.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada**
+Entrada:
 
 - Leer `año`
 - Inicializar variable texto `resultado`
 
-**Proceso**
+Proceso:
 
 Pueden ocurrir dos sucesos:
 
@@ -400,26 +406,25 @@ Pueden ocurrir dos sucesos:
 
 ![Untitled](imagenes//Untitled%207.png)
 
-1. Que el año sea divisible entre 4, ******************************también lo sea entre 100****************************** **********************y entre 400: AÑO BISIESTO**
+1. Que el año sea divisible entre 4, **también lo sea entre 100y entre 400: AÑO BISIESTO** 
     
-    ![Untitled](imagenes//Untitled%208.png)
-    
+![Untitled](imagenes//Untitled%208.png)
 
 Con lo cual habrá que establecer esas 3 condiciones en el algoritmo, una dentro de otra.
 
-**Salida**
+Salida:
 
 - Escribir `resultado` tras comprobar en el proceso si el año es bisiesto o no según las condiciones establecidas.
 
 **Paso 3**: Escribir el pseudocódigo.
 
-```markdown
+```python
 Algoritmo añoBisiesto
 
-# ENTRADA:
+# Entrada:
 	año <- leer()
 	resultado <- ""
-# PROCESO:
+# Proceso:
 	#Comprobar si el año es divisible entre 4 y NO es divisible entre 100:
 	Si año % (MOD) 4 = 0 Entonces
 		Si año % (MOD) 100 = 0 Entonces
@@ -431,48 +436,54 @@ Algoritmo añoBisiesto
 			resultado <- "El año es bisiesto"
 	Sino
 		resultado "El año no es bisiesto"		
-# SALIDA:
-	Escribir resultado
+# Salida:
+	Escribir(resultado)
+Fin Algoritmo
 ```
 
 ## 9. **Crea un algoritmo que determine si una cadena de texto es un palíndromo o no.**
 
 **Paso 1**: Definir el problema
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada:** Pedir cadena texto al usuario
+Entrada: Pedir cadena texto al usuario
 
-**Proceso:**
+Proceso:
 
 - El algoritmo primero pide al usuario que ingrese una cadena de texto y luego inicializa las variables necesarias.
 - Luego utiliza un ciclo "Para" para verificar si la cadena es un palíndromo o no. Dentro del ciclo, se compara cada letra de la cadena con su correspondiente al final de la cadena, para determinar si la cadena es un palíndromo.
 - Si se encuentra una letra diferente, la variable "palindromo" se establece en Falso y se sale del ciclo.
 
-**Salida:** Mostrar el resultado al usuario indicando si la cadena es o no un palíndromo.
+Salida: Mostrar el resultado al usuario indicando si la cadena es o no un palíndromo.
 
 **Paso 3**: Escribir el pseudocódigo.
 
 ```python
 Algoritmo Palindromo
-	# ENTRADA:
-  cadena<-leer()
-  longitud <- Longitud(cadena)
-  palindromo <- Verdadero
-	# PROCESO:
-	  Escribir("Ingrese cadena de texto:")
-	  Para i <- 1 Hasta Longitud/2 Hacer #cadena es palindromo?
-	    Si Subcadena(cadena, i, 1) <> Subcadena(cadena, longitud - i + 1, 1) Entonces
-	      palindromo <- Falso
-	      Salir
+
+# Entrada:
+	cadena<-leer()
+  	longitud <- Longitud(cadena)
+  	palindromo <- Verdadero
+	resultado <- ""
+# Proceso:
+	Escribir("Ingrese cadena de texto:")
+	Para i <- 1 Hasta Longitud/2 Hacer #cadena es palindromo?
+		Si Subcadena(cadena, i, 1) <> Subcadena(cadena, longitud - i + 1, 1) Entonces
+	    	palindromo <- Falso
+	      	Salir
 	    Fin Si
-	  Fin Para
-	  Si palindromo Entonces
-	    Escribir("La cadena es un palíndromo.")
-	  Sino
-	    Escribir("La cadena no es un palíndromo.")
-	  Fin Si
-	# SALIDA:
+	Fin Para
+
+	Si palindromo Entonces
+		resultado <- "La cadena es un palíndromo."
+	Sino
+	    resultado <- "La cadena no es un palíndromo."
+	Fin Si
+# Salida:
+	Escribir(resultado)
+Fin Algoritmo
 ```
 
 ## 10. **Dada una lista de nombres, crea un algoritmo que ordene la lista alfabéticamente.**
@@ -481,7 +492,7 @@ Algoritmo Palindromo
 
 Lista de nombres separados por comas. Hay que ordenar alfabeticamente los nombres
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada**  Definición usuario lista variable**`nombres`**
 
@@ -500,7 +511,7 @@ Lista de nombres separados por comas. Hay que ordenar alfabeticamente los nombre
 
 ```python
 Algoritmo OrdenarNombres
-	# ENTRADA:
+	# Entrada:
   nombres <-leer[]
 	# PROCESO:
   Para i <- 1 Hasta Longitud(nombres)- 1 Hacer #desde el primer indice de la lista (1) hasta el penultio indice de la lista (Longitud(nombres)-1).
@@ -528,7 +539,7 @@ El problema consiste en tomar una lista de números enteros y sumar únicamente 
 
 Para resolver el problema se necesitaría **iterar sobre la lista y comprobar si cada número es par o no**. En el caso de que lo sea, este número debe ser **añadido a la suma total**. Al final de la iteración se deberá devolver la suma total de los números pares en la lista.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada:** Lista de los números enteros y almacenarla en la variable **`listaNumerosEnteros`.**
 
@@ -545,7 +556,7 @@ Para resolver el problema se necesitaría **iterar sobre la lista y comprobar si
 
 ```markdown
 Algoritmo sumaNumerosPares
-	# ENTRADA:
+	# Entrada:
 		listaNumerosEnteros<-leer[] #por ejemplo [1,2,3,4,5,6,7,8,9]
 		suma<-0 #Inicializar la variable "suma" en cero.
 	# PROCESO:
@@ -566,7 +577,7 @@ El problema consiste en distinguir cuando un número es mayor, menor o igual que
 
 Para resolver el problema se necesita comprobar si `n es <, > o igual a 0`.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada:** Número introducido por el usuario asignado a variable`numero`
 
@@ -587,7 +598,7 @@ Respecto al número introducido:
 
 ```python
 Algoritmo determinarSignoNumero
-	# ENTRADA:
+	# Entrada:
 		numero<-leer()
 	# PROCESO:
 		Si no Es_Numerico(numero) Entonces:
@@ -611,7 +622,7 @@ El problema consiste en, dada una lista de números enteros, calcular la media d
 
 Para resolver el problema se necesita realizar la **suma de todos los números y dividir el resultado entre la cantidad de valores que tengamos en la lista**.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada:** Lista de los números enteros y almacenarla en la variable **`listaNumeros`.**
 
@@ -628,7 +639,7 @@ Para resolver el problema se necesita realizar la **suma de todos los números y
 
 ```python
 Algoritmo calcularMediaLista
-	# ENTRADA: 
+	# Entrada: 
 		listaNumeros<-leer[]
 		suma<-0
 	# PROCESO:
@@ -646,7 +657,7 @@ Algoritmo calcularMediaLista
 
 El problema consiste en, dado un rango de números enteros entre 1 y 100, crear un algoritmo que genere un número aleatorio y le pida al usuario adivinarlo. El algoritmo debe indicar si el número introducido por el usuario es mayor o menor que el número aleatorio, hasta que el usuario adivine el número correcto.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada: `respuesta`** del usuario
 
@@ -666,7 +677,7 @@ El problema consiste en, dado un rango de números enteros entre 1 y 100, crear 
 
 ```python
 Algoritmo adivinarNumeroAleatorio
-	# ENTRADA:
+	# Entrada:
 		respuesta<-0 #inicializar variable "respuesta"
 	# PROCESO:
 		numeroAleatorio <- GenerarNumeroAleatorio(1,100) #Generar número aleatorio entre 1 y 100.
@@ -692,7 +703,7 @@ PROBLEMA: Determinar si una cadena de texto es un anagrama de otra cadena de tex
 
 Anagrama: Procedimiento que consiste en crear una palabra a partir de la reordenación de las letras de otra palabra.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada:** Leer**`cadena1`, `cadena2` .**
 
@@ -708,7 +719,7 @@ Anagrama: Procedimiento que consiste en crear una palabra a partir de la reorden
 ```python
 Algoritmo anagramaCadenasTexto
 
-	# ENTRADA:
+	# Entrada:
 		cadena1<-leer()
 		cadena2<-leer()
 	# PROCESO:
@@ -744,9 +755,9 @@ lista.
 
 **Paso 1**: Definir el problema
 
-El problema consiste en escribir un programa que a partir de una lista de números enteros como entrada por el usuario y que elimine todos los elementos de la lista que aparezcan más de una vez. Cada número entero aparecerá de esta forma únicamente una vez en la lista de salida a partir de la variable `**listaNumeros**`. 
+El problema consiste en escribir un programa que a partir de una lista de números enteros como Entrada por el usuario y que elimine todos los elementos de la lista que aparezcan más de una vez. Cada número entero aparecerá de esta forma únicamente una vez en la lista de salida a partir de la variable `**listaNumeros**`. 
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada:** Lista de números enteros definida por el usuario almacenada en la variable **`listaNumeros`.**
 
@@ -771,7 +782,7 @@ El problema consiste en escribir un programa que a partir de una lista de númer
 ```python
 Algoritmo eliminarNumerosDuplicadosLista
 
-	# ENTRADA:
+	# Entrada:
 		listaNumeros<-leer[]
 	# PROCESO:
 		longitudLista = Longitud(listaNumeros) 
@@ -796,7 +807,7 @@ Algoritmo eliminarNumerosDuplicadosLista
 
 El problema consiste en determinar una forma de saber si un numero introducido por el usuario **es igual leído de izquierda a derecha que de derecha a izquierda**.
 
-**Paso 2**: Ingresar la entrada, el proceso y la salida.
+**Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
 **Entrada: `numero`, `numeroInvertido`, `numeroACadenaTexto`, `resultado`.**
 
@@ -816,7 +827,7 @@ El problema consiste en determinar una forma de saber si un numero introducido p
 
 ```python
 Algoritmo numeroEsCapicuaONo
-	# ENTRADA: 
+	# Entrada: 
 		numero<-Leer() #Tiene que ser numero entero
 		numeroInvertido<-"" 
 		numeroACadenaTexto<-""
