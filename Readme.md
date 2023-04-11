@@ -529,6 +529,11 @@ Algoritmo OrdenarNombres
   Fin Para
 	# SALIDA:
 ```
+## 11.
+
+## 12.
+
+## 13.
 
 ## 14. Dada una lista de números enteros, crea un algoritmo que calcule la suma de todos los números
 pares de la lista.
@@ -554,7 +559,7 @@ Para resolver el problema se necesitaría **iterar sobre la lista y comprobar si
 
 **Paso 3**: Escribir el pseudocódigo.
 
-```markdown
+```python
 Algoritmo sumaNumerosPares
 	# Entrada:
 		listaNumerosEnteros<-leer[] #por ejemplo [1,2,3,4,5,6,7,8,9]
@@ -567,6 +572,7 @@ Algoritmo sumaNumerosPares
 		Fin Para
 	# SALIDA:
 		Escribir "La suma de los números pares es" + suma
+Fin Algoritmo
 ```
 
 ## 15. Crea un algoritmo que determine si un número es positivo, negativo o cero.
@@ -612,6 +618,7 @@ Algoritmo determinarSignoNumero
 		Fin Si
 	# SALIDA:
 		Escribir signo
+Fin Algoritmo
 ```
 
 ## 16. Dada una lista de números enteros, crea un algoritmo que calcule la media de la lista.
@@ -649,6 +656,7 @@ Algoritmo calcularMediaLista
 		media = suma / Longitud(listaNumeros) #Para hallar media dividimos la suma de valores entre la cantidad de numeros en lista.
 	# SALIDA:
 		Escribir "La media de los números de la lista es " + media
+Fin Algoritmo
 ```
 
 ## 17. Crea un algoritmo que genere un número aleatorio entre 1 y 100, y le pida al usuario adivinarlo. El algoritmo deberá indicar si el número introducido es mayor o menor que el número aleatorio, hasta que el usuario adivine el número correcto.
