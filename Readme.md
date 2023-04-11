@@ -77,10 +77,10 @@ Algoritmo CalculoDNI
 		resultado <- ""
 	# Proceso
 		Si DNI es válido Entonces 
-				resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
-				resultado <- tablaLetrasDNI[resultadoResto]
+			resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
+			resultado <- tablaLetrasDNI[resultadoResto]
 		Sino
-				resultado <- "DNI inválido"
+			resultado <- "DNI inválido"
 		Fin Si
 	# Salida
 		Escribir(resultado)
