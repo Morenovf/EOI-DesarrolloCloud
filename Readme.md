@@ -1,24 +1,26 @@
-# Ejercicios de clase Algoritmos
+# Fundamentos de Programación - Ejercicios con algoritmos
 
-Proceso:
+## Indicaciones iniciales
+Proceso para acometer la resolución de los ejercicios de algoritmos:
 
-**Paso 1**: Definir el problema
+**Paso 1**: Definir el problema.
 
 **Paso 2**: Ingresar la entrada, el proceso y la salida.
 
 **Paso 3**: Escribir el pseudocódigo.
 
+Veremos a continuación 20 ejercicios donde aplicar este proceso.
 ## 1. **Calcular la letra del DNI Español**
 
 **Paso 1**: Definir el problema:
 
-**¿Cómo se calcula la letra del DNI?**
+El número del DNI debe tener **8 dígitos**. Para calcular la letra del Documento Nacional de Identidad (DNI) español, se utiliza un algoritmo que se basa en el número de identificación.
 
-El número del DNI **debe tener 8 dígitos**. Para calcular la letra del Documento Nacional de Identidad (DNI) español, se utiliza un algoritmo que se basa en el número de identificación. El procedimiento es el siguiente:
+ El procedimiento es el siguiente:
 
 1. Dividir el número de identificación entre 23.
 2. Tomar el resto de la división anterior.
-3. Consultar una tabla que asocia cada resto con una letra. La tabla es la siguiente:
+3. Consultar la tabla que asocia cada resto con una letra:
     
     
     | Resto | Letra |
@@ -49,81 +51,39 @@ El número del DNI **debe tener 8 dígitos**. Para calcular la letra del Documen
 
 **Paso 2**: Ingresar la entrada, el proceso y la salida.
 
-```markdown
-Algoritmo CalculoDNI
-	# Entrada
-Definir las variables:
-1. **DNI**
-	- Pedir a usuario español ingresar su número de identificación, sin la letra.
-2. **TablaLetrasDNI**
-	- Tabla que asocia cada resto con una letra. 
-3. r**esultadoResto
-	-** Es el resto de la división del número de DNI entre 23.
-	# Proceso
-1. Verificar que el número de identificación introducido sea igual a 8 dígitos y que no haya caracteres.
-	+ Si es erronea, asigne a la variable **resultado** "El número de DNI introducido no es válido"
-2. Convertir **DNI** a valor entero.
-3. Dividir **DNI** entre 23 y tomar el resto de la división anterior asociandolo a la variable **resultadoResto**.
-3. Consultar **TablaLetrasDNI** y asociar **resultadoResto** con la letra que le corresponde.
-	# Salida
-- Si número de identificación es igual a 8 dígitos:
-	- La salida mostrará el DNI junto al caracter
-- Si número de identificación no es igual a 8 dígitos, hay caracteres intercalados o no hay números::
-	- Imprimir en pantalla: "DNI no válido"	
-Fin Algoritmo
-```
+Entrada:
+
+- Solicitar el número de DNI al usuario y almacenarlo en la variable `DNI`. Inicializamos la variable `resultado`, que contendrá la letra del DNI asignada.
+
+- Almacenar en la variable `tablaLetrasDNI` la sucesión de letras de la tabla que asocia cada resto con una letra empezando desde el numero 0.
+
+Proceso:
+-  Comprobar que el DNI tiene 8 dígitos y que sean todos numéricos, sino mostrar un mensaje de error.
+
+- Dividimos el número completo del DNI entre 23, sin sacar decimales. Utilizamos el resto de la división, almacenado en la variable `resultadoResto` para calcular la letra, que ocupará una posición en específico en variable donde se almacena la serie de letras.
+
+Salida:
+- Mostrar por pantalla la letra del DNI, almacenado en la variable `resultado`
+
+- En el caso de que el usuario no haya ingresado 8 dígitos o no sean valores numéricos, mostrar mensaje de error.
 
 **Paso 3**: Escribir el pseudocódigo.
 
-Ahora en pseudocódigo:
-
-```markdown
+```python
 Algoritmo CalculoDNI
 	# Entrada
-	DNI<-leer
-	tablaLetrasDNI<-"TRWAGMYFPDXBNJZSQVHLCKE"
-	tablaLetrasDNI[0]<-T
-	tablaLetrasDNI[1]<-R
-	tablaLetrasDNI[2]<-W
-	tablaLetrasDNI[3]<-A
-	tablaLetrasDNI[4]<-G
-	tablaLetrasDNI[5]<-M
-	tablaLetrasDNI[6]<-Y
-	tablaLetrasDNI[7]<-F
-	tablaLetrasDNI[8]<-P
-	tablaLetrasDNI[9]<-D
-	tablaLetrasDNI[10]<-X
-	tablaLetrasDNI[11]<-B
-	tablaLetrasDNI[12]<-N
-	tablaLetrasDNI[13]<-J
-	tablaLetrasDNI[14]<-Z
-	tablaLetrasDNI[15]<-S
-	tablaLetrasDNI[16]<-Q
-	tablaLetrasDNI[17]<-V
-	tablaLetrasDNI[18]<-H
-	tablaLetrasDNI[19]<-L
-	tablaLetrasDNI[20]<-C
-	tablaLetrasDNI[21]<-K
-	tablaLetrasDNI[22]<-E
-	numeroFila1<-0
-	letraFila1z<-T
-	resultado<-""
+	DNI <- leer()
+	tablaLetrasDNI <- "TRWAGMYFPDXBNJZSQVHLCKE"
+	resultado <- ""
 	# Proceso
-	si DNI es valido Entonces #
-			resultadoResto<-DNI mod 23 #mod es el resto de dividir
-			#resultado<-recuperarLetra a partir de tablaLetrasDNI y resultadoResto
-			#Para i<-0 Hasta 22 Con Paso 1 Hacer
-			#  Si resultadoResto Igual i Entonces
-			#    resultado = tablaLetrasDNI[i]
-			#    i<-23 #break
-			#  Finsi
-			#Fin Para
-			resultado<-tablaLetrasDNI[resultadoResto]
+	Si DNI es válido Entonces 
+			resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
+			resultado <- tablaLetrasDNI[resultadoResto]
 	Sino
-			resultado<-"DNI inválido"
-	Fin si
+			resultado <- "DNI inválido"
+	Fin Si
 	# Salida
-	Escribir resultado
+	Escribir(resultado)
 Fin Algoritmo
 ```
 
@@ -137,30 +97,31 @@ A partir del salario bruto se deducen las cotizaciones a la Seguridad Social y e
 
 El salario neto anual se obtiene restando al salario bruto anual las cotizaciones y el IRPF correspondiente. El resultado final es el salario que percibe el trabajador después de impuestos y cotizaciones.
 
-**Paso 2:** Poner la entrada, el proceso y la salida.
+**Paso 2:** Ingresar la entrada, el proceso y la salida.
 
 Entrada: 
 
-- `salarioBase`,
-- `pagasExtras`,
-- `complementos`,
-- `otrosConceptosRetributivos`,
-- `IRPF`,
-- `seguridadSocial`.
+Se reciben por parte del usuario los siguientes inputs:
+- `salarioBase`
+- `pagasExtras`
+- `complementos`
+- `otrosConceptosRetributivos`
+- `IRPF`
+- `seguridadSocial`
 
 Proceso:
 
-- Sumar `salarioBase`, `pagasExtras`, `complementos`, `otrosConceptosRetributivos` y lo asigno a `salarioBruto`.
-- Sumar `IRPF`, `seguridadSocial` y lo asigno a deducciones.
-- `salarioNeto` asigna `salarioBruto` - `deducciones`.
+- Sumar `salarioBase`, `pagasExtras`, `complementos`, `otrosConceptosRetributivos` y  asignarlo a `salarioBruto`.
+- Sumar `IRPF`, `seguridadSocial` y asignarlo a `deducciones`.
+- `salarioNeto` se obtendrá realizando `salarioBruto` - `deducciones`.
 
 Salida:
 
-- Escribir(`salarioBruto`,`salarioNeto`)
+- Escribir `salarioNeto`
 
 **Paso 3:** Escribir el pseudocódigo
 
-```markdown
+```python
 Algoritmo CalculoSalario
 	# Entrada
 		salarioBase <- leer()
@@ -168,12 +129,13 @@ Algoritmo CalculoSalario
 		complementos <- leer()
 		otrosConceptosRetributivos <- leer()
 		IRPF <- leer()
-		Seguridad Social <- leer()
+		seguridadSocial <- leer()
 	# Proceso
-		salarioBruto <- salarioBase+pagasExtras+complementos+otrosConceptosRetributivos
-		deducciones <- IRPF+Seguridad Social
+		salarioBruto <- salarioBase + pagasExtras + complementos+ otrosConceptosRetributivos
+		deducciones <- IRPF + seguridadSocial
+		salarioNeto <- salarioBruto - deducciones
 	# Salida
-		Escribir salario
+		Escribir(salarioNeto)
 Fin Algoritmo
 ```
 
