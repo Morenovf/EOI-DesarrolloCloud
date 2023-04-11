@@ -72,18 +72,18 @@ Salida:
 ```python
 Algoritmo CalculoDNI
 	# Entrada
-	DNI <- leer()
-	tablaLetrasDNI <- "TRWAGMYFPDXBNJZSQVHLCKE"
-	resultado <- ""
+		DNI <- leer()
+		tablaLetrasDNI <- "TRWAGMYFPDXBNJZSQVHLCKE"
+		resultado <- ""
 	# Proceso
-	Si DNI es válido Entonces 
-			resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
-			resultado <- tablaLetrasDNI[resultadoResto]
-	Sino
-			resultado <- "DNI inválido"
-	Fin Si
+		Si DNI es válido Entonces 
+				resultadoResto <- DNI MOD 23 #MOD es el módulo (resto de dividir un número).
+				resultado <- tablaLetrasDNI[resultadoResto]
+		Sino
+				resultado <- "DNI inválido"
+		Fin Si
 	# Salida
-	Escribir(resultado)
+		Escribir(resultado)
 Fin Algoritmo
 ```
 
@@ -124,7 +124,7 @@ Salida:
 ```python
 Algoritmo CalculoSalario
 	# Entrada
-		salarioBase <- leer()
+	salarioBase <- leer()
 		pagasExtras <- leer()
 		complementos <- leer()
 		otrosConceptosRetributivos <- leer()
@@ -143,60 +143,50 @@ Fin Algoritmo
 
 **Paso 1**: Definir el problema
 
-El problema que se describe en el enunciado es el siguiente:
-
-- Se necesita determinar la ruta óptima para llegar a una ciudad por avión.
-
-Para resolver este problema, se pueden seguir los siguientes pasos:
-
-- El usuario debe introducir información necesaria para determinar la ruta óptima, como la ciudad de **origen** y la de **destino**.
-- La información sobre las rutas por avión podemos plantear que la podríamos obtener mediante la ******************supuesta función inventada `Obtener_Rutas_Por_Avión()`**, que accederá a bases de datos de agencias de viajes en línea, sitios web de aerolíneas y darnos la información que requerimos. **`OBTENER_CIUDADES_DE_RUTA(rutaOptima)`** se usará para obtener la lista de ciudades que conforman la ruta óptima.
-- Finalmente, se devuelve la lista de ciudades como salida.
+Necesitamos partir de una lista de ciudades definidas por el usuario y conocer la distancia en kilometros entre elleas para determinar la ruta. Dependiendo de los datos que se proporcionen se podrá determinar una ruta u otra dependiendo del origen y el destino especificado.
 
 **Paso 2**: Ingresar la entrada, el proceso y la salida.
 
-**Entrada**:
+Entrada:
 
-Solicitar al usuario:
+- Pedir al usuario una lista con las ciudades disponibles para el viaje y almacenarlo en `rutas`.
+- Solicitar al usuario que ingrese la ciudad de `origen` y la ciudad de `destino`
 
-- Ciudad de origen `**ciudadOrigen**`.
-- Ciudad de destino `**ciudadDestino**`.
+Proceso:
 
-**Proceso**:
+- Validar que las ciudades que indicó el usuario existan en la lista de ciudades definidas por el mismo.
 
-- Usar una función para obtener rutas: **`Obtener_Rutas_Por_Avión()`**  teniendo en cuenta la información introducida por el usuario y recorreremos la lista para encontrar la ruta que encaje con nuestros requisitos.
-- Si no se encuentra una ruta óptima mostraremos un mensaje de error. Si no, se utiliza la función **`OBTENER_CIUDADES_DE_RUTA(rutaOptima)`**  para mostrar la lista de ciudades que formarían la ruta óptima definida.
+Salida:
 
-**Salida**:
+- Si las ciudades son válidas, imprimir en pantalla `rutaUsuario`: la ruta del vuelo. `origen`, `destino` y `distancia` en kilometros.
 
-- No hay ruta óptima → "No existen rutas para llegar de la ciudad de origen a la ciudad destino descritas."
-- Sí hay ruta óptima → `ruta` muestra la lista de ciudades que formarían la ruta óptima.
+- Si una de las ciudades origen o destino no son válidas, mostrar mensaje de error.
 
 **Paso 3**: Escribir el pseudocódigo.
 
 ```python
-ALGORITMO determinarRutaPorAvion
-	# ENTRADA: 
-		ciudadOrigen<-leer() #Usuario introduce cadena de texto que indica la ciudad de origen.
-    ciudadDestino<-leer() #(...) que indica la ciudad de destino.
-		rutaOptima<-"" #Inicializar la variable "rutaOptima".
-		ruta<-"" #Lo mismo que la anterior
-	# PROCESO:
-    rutas = Obtener_Rutas_Por_Avión() #Nos inventamos una función que obtenga todas las rutas disponibles por avión.
-    
-    Para i Desde 0 Hasta Longitud(rutas) Hacer #Recorremos la lista de rutas por avión.
-        Si rutas[i].origen = ciudadOrigen Y rutas[i].destino = ciudadDestino Entonces #Buscamos que se cumplan las dos condiciones.
-            rutaOptima = rutas[i] #La ruta actual es la ruta óptima.
-            Salir #Salir de la iteración. Ya encontramos la ruta óptima.
-        Fin Si
-    Fin Para
-
-    Si rutaOptima = "" Entonces #Si no se encontró rutaOptima y se conserva el valor inicial...
-        Escribir "No existen rutas para llegar de la ciudad de origen a la ciudad destino descritas." 
-    Sino
-        ruta = Obtener_Ciudades_De_Ruta(rutaOptima) #Nos inventamos una función que obtenga las ciudades que conforman la ruta óptima.
-	# SALIDA: 
-		Escribir ruta #Escribir la lista de ciudades que conforman la ruta para llegar a la ciudad destino.
+Algoritmo RutaAvionCiudades
+	# Entrada:
+		rutas <- leer{}
+		#ejemplo con kilometros de distancia: 
+		# rutas <- {
+		# 	"Madrid": {"Barcelona": 600, "Valencia": 400, "Sevilla": 500, "Bilbao": 300},
+   		# 	"Barcelona": {"Madrid": 600, "Valencia": 350, "Sevilla": 800, "Bilbao": 750},
+   		# 	"Valencia": {"Madrid": 400, "Barcelona": 350, "Sevilla": 700, "Bilbao": 650},
+   		# 	"Sevilla": {"Madrid": 500, "Barcelona": 800, "Valencia": 700, "Bilbao": 850},
+   		# 	"Bilbao": {"Madrid": 300, "Barcelona": 750, "Valencia": 650, "Sevilla": 850}
+		# }
+		origen <- leer() 
+		destino <- leer()
+	# Proceso:
+		Si origen y destino están en rutas Entonces
+			distancia <- rutas[origen][destino]
+			rutaUsuario <- "Ruta de vuelo: ", origen, "->", destino, " (", distancia, " km)"
+		Sino
+			rutaUsuario <- "Ciudad de origen o destino no válidas."
+	# Salida: 
+		Escribir(rutaUsuario)
+Fin Algoritmo
 ```
 
 ## 4. **Calcula el área y perímetro de un círculo dado su radio.**
