@@ -135,7 +135,7 @@ Algoritmo CalculoSalario
 # Proceso:
 	salarioBruto <- salarioBase + pagasExtras + complementos+ otrosConceptosRetributivos
 	deducciones <- IRPF + seguridadSocial
-salarioNeto <- salarioBruto - deducciones
+	salarioNeto <- salarioBruto - deducciones
 	# Salida:
 	Escribir(salarioNeto)
 Fin Algoritmo
