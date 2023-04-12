@@ -443,19 +443,28 @@ Fin Algoritmo
 
 ## 9. **Crea un algoritmo que determine si una cadena de texto es un palíndromo o no.**
 
-**Paso 1**: Definir el problema
+**Paso 1**: Definir el problema.
+
+El problema consiste en determinar si una cadena de texto es un palíndromo o no. Un palíndromo es una palabra, frase o secuencia de caracteres que se lee igual hacia adelante y hacia atrás. Por ejemplo, "reconocer" es un palíndromo, ya que se lee igual en ambas direcciones.
+
+Para resolver este problema, debemos recorrer la cadena de texto y comparar los caracteres en las posiciones opuestas para determinar si la cadena es un palíndromo o no.
 
 **Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-Entrada: Pedir cadena texto al usuario
+Entrada: 
+
+- Leer `cadena` de texto del usuario y almacenarla en una variable.
+- Inicializar variable `cadena_invertida`.
 
 Proceso:
 
-- El algoritmo primero pide al usuario que ingrese una cadena de texto y luego inicializa las variables necesarias.
-- Luego utiliza un ciclo "Para" para verificar si la cadena es un palíndromo o no. Dentro del ciclo, se compara cada letra de la cadena con su correspondiente al final de la cadena, para determinar si la cadena es un palíndromo.
-- Si se encuentra una letra diferente, la variable "palindromo" se establece en Falso y se sale del ciclo.
+- Recorrer la cadena de de texto de atrás hacia delante y almacenar cada carácter en la variable `cadena_invertida`.
 
-Salida: Mostrar el resultado al usuario indicando si la cadena es o no un palíndromo.
+- Comparar la cadena de texto original con la cadena invertida.
+
+Salida: 
+
+- Si ambas cadenas son inguales, mostrar por pantalla que la cadena original es un palíndromo. De lo contrario, no lo es. Salida almacenada en `resultado`
 
 **Paso 3**: Escribir el pseudocódigo.
 
@@ -463,24 +472,17 @@ Salida: Mostrar el resultado al usuario indicando si la cadena es o no un palín
 Algoritmo Palindromo
 
 # Entrada:
-	cadena<-leer()
-  	longitud <- Longitud(cadena)
-  	palindromo <- Verdadero
+	cadena <- leer()
+  	cadena_invertida = ""
 	resultado <- ""
 # Proceso:
-	Escribir("Ingrese cadena de texto:")
-	Para i <- 1 Hasta Longitud/2 Hacer #cadena es palindromo?
-		Si Subcadena(cadena, i, 1) <> Subcadena(cadena, longitud - i + 1, 1) Entonces
-	    	palindromo <- Falso
-	      	Salir
-	    Fin Si
+	Para i <- Longitud(cadena)-1 Hasta 0 Con Paso -1 Hacer
+		cadena_invertida <- cadena_invertida + Subcadena(cadena, i+1, 1)
 	Fin Para
-
-	Si palindromo Entonces
+	Si cadena == cadena_invertida Entonces
 		resultado <- "La cadena es un palíndromo."
 	Sino
-	    resultado <- "La cadena no es un palíndromo."
-	Fin Si
+		resultado <- "La cadena no es un palíndromo."
 # Salida:
 	Escribir(resultado)
 Fin Algoritmo
@@ -490,44 +492,40 @@ Fin Algoritmo
 
 **Paso 1**: Definir el problema:
 
-Lista de nombres separados por comas. Hay que ordenar alfabeticamente los nombres
+El problema consiste en ordenar una lista de nombres alfabéticamente, es decir, en orden ascendente de las letras de cada nombre de la lista.
+
+El objetivo es que los nombres estén ordenados de manera clara y fácilmente legible para los usuarios o para cualquier otro proceso que los necesite.
 
 **Paso 2**: Ingresar la Entrada, el proceso y la salida.
 
-**Entrada**  Definición usuario lista variable**`nombres`**
+Entrada:  
 
-**Proceso** 
+- Pedir al usuario una serie de `nombres`
 
-- Dos ciclos anidados “Para” u ordenamiento de burbuja.
-    - El primero se encarga de recorrer la lista ed nombres (primer indice comienza en indice 1)
-    - El segundo recorre el resto de la lista a partir de la posición actual del primer ciclo  (segundo indice comienza en indice 2)
-        
-        ![Untitled](imagenes/Untitled%209.png)
-        
+Proceso: 
 
-**Salida:**  Lista ordenada alfabeticamente
+- Ordenar los nombres alfabeticamente.
+- Recorrer la lista para mostrarlos en una sola salida.
+
+Salida:  
+
+- Mostrar en pantalla `nombresOrdenados`, la variable que contendrá la lista de los nombres de forma ordenada. 
 
 **Paso 3**: Escribir el pseudocódigo.
 
 ```python
 Algoritmo OrdenarNombres
-	# Entrada:
-  nombres <-leer[]
-	# PROCESO:
-  Para i <- 1 Hasta Longitud(nombres)- 1 Hacer #desde el primer indice de la lista (1) hasta el penultio indice de la lista (Longitud(nombres)-1).
-    Para j <- i + 1 Hasta Longitud(nombres) Hacer #comprobamos si el nombre en el índice "i" de la lista es mayor que el nombre en el índice "j" de la lista.
-      Si nombres[i] > nombres[j] Entonces
-        temporal <- nombres[i] #si no estan en orden alfabetico se intercambian
-        nombres[i] <- nombres[j]
-        nombres[j] <- temporal
-      Fin Si
-    Fin Para
-  Fin Para
-  Escribir("La lista de nombres ordenada alfabéticamente es:")
-  Para i <- 1 Hasta Longitud(nombres) Hacer
-    Escribir(nombres[i])
-  Fin Para
-	# SALIDA:
+# Entrada:
+	nombres <- leer[]
+	#nombres <- ["Paco", "Juana", "Alberto", "Ricardo"]
+# Proceso
+	Ordenar(nombres)
+	Para i <- 0  Hasta Longitud(nombres) Hacer
+		nombresOrdenados <- nombres[i]
+	Fin Para
+# Salida
+	Escribir(nombresOrdenados)
+Fin Algoritmo
 ```
 ## 11.
 
